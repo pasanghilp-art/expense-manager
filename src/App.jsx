@@ -5,10 +5,10 @@ import { ExpenseForm } from "./components/ExpenseForm";
 function App() {
     const [expenses, setExpenses] = useState([]);
 
-    const onAddExpense = (event) => {
+    const onAddExpense = (formData) => {
         const id = Date.now();
-        const eventWithId = event + id;
-        setExpenses(eventWithId);
+        const expenseWithId = { ...formData, id };
+        setExpenses([...expenses, expenseWithId]);
     };
     return <ExpenseForm onAddExpense={onAddExpense} />;
 }
