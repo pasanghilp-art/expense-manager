@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./ExpenseForm.css";
 
 export function ExpenseForm({ onAddExpense }) {
     const [formData, setFormData] = useState({
@@ -20,31 +21,41 @@ export function ExpenseForm({ onAddExpense }) {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <label>Amount</label>
-                <input
-                    value={formData.amount}
-                    onChange={SaveFormData}
-                    name="amount"
-                />
-                <label>Category</label>
-                <input
-                    value={formData.category}
-                    onChange={SaveFormData}
-                    name="category"
-                />
-                <label>Date</label>
-                <input
-                    value={formData.date}
-                    onChange={SaveFormData}
-                    name="date"
-                />
-                <label>Note</label>
-                <input
-                    value={formData.note}
-                    onChange={SaveFormData}
-                    name="note"
-                />
-                <button type="submit">Save</button>
+                <div className="form-group">
+                    <label>Amount</label>
+                    <input
+                        value={formData.amount}
+                        onChange={SaveFormData}
+                        name="amount"
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Category</label>
+                    <input
+                        value={formData.category}
+                        onChange={SaveFormData}
+                        name="category"
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Date</label>
+                    <input
+                        value={formData.date}
+                        onChange={SaveFormData}
+                        name="date"
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Note</label>
+                    <input
+                        value={formData.note}
+                        onChange={SaveFormData}
+                        name="note"
+                    />
+                </div>
+                <button type="submit" className="Button">
+                    Save
+                </button>
             </form>
         </>
     );

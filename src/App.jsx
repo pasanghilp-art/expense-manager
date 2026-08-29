@@ -19,10 +19,11 @@ function App() {
         const expensesWithId = { ...formData, id };
         setExpenses([...expenses, expensesWithId]);
     };
+
     return (
         <>
             <ExpenseForm onAddExpense={onAddExpense} />
-            <ExpenseList expenses={expenses} />
+            <ExpenseList expenses={expenses} setExpenses={setExpenses} />
             <SummaryStats expenses={expenses} />
             <CategoryChart expenses={expenses} />
         </>

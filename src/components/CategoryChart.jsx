@@ -1,11 +1,4 @@
-import {
-    PieChart,
-    Pie,
-    Cell,
-    Tooltip,
-    Legend,
-    ResponsiveContainer,
-} from "recharts";
+import { PieChart, Pie, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 export function CategoryChart({ expenses }) {
     const categoryTotals = expenses.reduce((acc, expense) => {
@@ -14,14 +7,15 @@ export function CategoryChart({ expenses }) {
         return acc;
     }, {});
 
+    const COLORS = ["#748ffc", "#ff6b6b", "#ffa94d", "#51cf66", "#c084fc"];
+
     const chartData = Object.entries(categoryTotals).map(
-        ([category, total]) => ({
+        ([category, total], index) => ({
             category,
             total,
+            fill: COLORS[index % COLORS.length],
         }),
     );
-
-    const COLORS = ["#748ffc", "#ff6b6b", "#ffa94d", "#51cf66", "#c084fc"];
     return (
         <ResponsiveContainer width="100%" height={300}>
             <PieChart>
@@ -32,12 +26,6 @@ export function CategoryChart({ expenses }) {
                     outerRadius={100}
                     label
                 />
-                {chartData.map((entry, index) => (
-                    <Cell
-                        key={entry.category}
-                        fill={COLORS[index % COLORS.length]}
-                    />
-                ))}
                 <Tooltip />
                 <Legend />
             </PieChart>
