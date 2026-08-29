@@ -1,0 +1,8 @@
+.expense-item{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--card);
+    border-radius: 14px;
+}
