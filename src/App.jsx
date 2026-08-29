@@ -3,6 +3,7 @@ import "./App.css";
 import { ExpenseForm } from "./components/ExpenseForm";
 import { ExpenseList } from "./components/ExpenseList";
 import { SummaryStats } from "./components/SummaryStats";
+import { CategoryChart } from "./components/CategoryChart";
 
 function App() {
     const [expenses, setExpenses] = useState(
@@ -23,6 +24,7 @@ function App() {
             <ExpenseForm onAddExpense={onAddExpense} />
             <ExpenseList expenses={expenses} />
             <SummaryStats expenses={expenses} />
+            <CategoryChart expenses={expenses} />
         </>
     );
 }
