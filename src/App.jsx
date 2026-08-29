@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { ExpenseForm } from "./components/ExpenseForm";
 import { ExpenseList } from "./components/ExpenseList";
+import { SummaryStats } from "./components/SummaryStats";
 
 function App() {
     const [expenses, setExpenses] = useState(
@@ -21,6 +22,7 @@ function App() {
         <>
             <ExpenseForm onAddExpense={onAddExpense} />
             <ExpenseList expenses={expenses} />
+            <SummaryStats expenses={expenses} />
         </>
     );
 }
