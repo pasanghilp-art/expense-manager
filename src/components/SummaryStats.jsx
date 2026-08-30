@@ -6,6 +6,7 @@ export function SummaryStats() {
         (sum, expense) => sum + Number(expense.amount),
         0,
     );
+    const cat;
 
     return (
         <div className="summary-stats">

@@ -42,6 +42,7 @@ export function ExpenseForm() {
                 <div className="form-group">
                     <label>Date</label>
                     <input
+                        type="date"
                         value={formData.date}
                         onChange={SaveFormData}
                         name="date"
