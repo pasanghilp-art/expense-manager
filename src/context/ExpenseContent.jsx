@@ -23,6 +23,7 @@ export function ExpenseProvider({ children }) {
         return acc;
     }, {});
 
+    console.log(expenses);
     return (
         <ExpenseContext.Provider
             value={{ expenses, setExpenses, onAddExpense, categoryTotals }}

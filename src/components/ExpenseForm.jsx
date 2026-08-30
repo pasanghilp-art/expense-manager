@@ -18,6 +18,12 @@ export function ExpenseForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
         onAddExpense(formData);
+        setFormData({
+            amount: "",
+            category: "",
+            date: "",
+            note: "",
+        });
     };
 
     return (
