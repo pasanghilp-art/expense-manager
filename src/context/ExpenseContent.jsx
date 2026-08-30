@@ -16,9 +16,16 @@ export function ExpenseProvider({ children }) {
         const expensesWithId = { ...formData, id };
         setExpenses([...expenses, expensesWithId]);
     };
+
+    const categoryTotals = expenses.reduce((acc, expense) => {
+        acc[expense.category] =
+            (acc[expense.category] || 0) + Number(expense.amount);
+        return acc;
+    }, {});
+
     return (
         <ExpenseContext.Provider
-            value={{ expenses, setExpenses, onAddExpense }}
+            value={{ expenses, setExpenses, onAddExpense, categoryTotals }}
         >
             {children}
         </ExpenseContext.Provider>

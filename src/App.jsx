@@ -2,8 +2,9 @@ import "./App.css";
 import { ExpenseForm } from "./components/ExpenseForm";
 import { ExpenseList } from "./components/ExpenseList";
 import { SummaryStats } from "./components/SummaryStats";
-import { CategoryChart } from "./components/CategoryChart";
 import { ExpenseProvider } from "./context/ExpenseContent";
+import { CategoryBarChart } from "./components/CategoryBarChart";
+import { CategoryPieChart } from "./components/CategoryPieChart";
 
 function App() {
     return (
@@ -11,7 +12,8 @@ function App() {
             <ExpenseForm />
             <ExpenseList />
             <SummaryStats />
-            <CategoryChart />
+            <CategoryPieChart />
+            <CategoryBarChart />
         </ExpenseProvider>
     );
 }

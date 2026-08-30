@@ -1,13 +1,9 @@
 import { PieChart, Pie, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, YAxis } from "recharts";
 import { useExpenses } from "../context/ExpenseContent";
 
-export function CategoryChart() {
-    const { expenses } = useExpenses();
-    const categoryTotals = expenses.reduce((acc, expense) => {
-        acc[expense.category] =
-            (acc[expense.category] || 0) + Number(expense.amount);
-        return acc;
-    }, {});
+export function CategoryPieChart() {
+    const { categoryTotals } = useExpenses();
 
     const COLORS = ["#748ffc", "#ff6b6b", "#ffa94d", "#51cf66", "#c084fc"];
 
@@ -31,6 +27,13 @@ export function CategoryChart() {
                 <Tooltip />
                 <Legend />
             </PieChart>
+
+            <BarChart width={400} height={300} data={chartData}>
+                <XAxis dataKey="category" />
+                <YAxis />
+                <Tooltip />
+                <Bar dataKey="total" fill="#8884d8" />
+            </BarChart>
         </ResponsiveContainer>
     );
 }
