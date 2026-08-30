@@ -1,6 +1,8 @@
 import { ExpenseItem } from "./ExpenseItem";
+import { useExpenses } from "../context/ExpenseContent";
 
-export function ExpenseList({ expenses, setExpenses }) {
+export function ExpenseList() {
+    const { expenses, setExpenses } = useExpenses();
     if (expenses.length === 0) {
         return <p>No expenses yet!</p>;
     }

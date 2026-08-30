@@ -1,6 +1,8 @@
 import { PieChart, Pie, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { useExpenses } from "../context/ExpenseContent";
 
-export function CategoryChart({ expenses }) {
+export function CategoryChart() {
+    const { expenses } = useExpenses();
     const categoryTotals = expenses.reduce((acc, expense) => {
         acc[expense.category] =
             (acc[expense.category] || 0) + Number(expense.amount);

@@ -1,4 +1,7 @@
-export function SummaryStats({ expenses }) {
+import { useExpenses } from "../context/ExpenseContent";
+
+export function SummaryStats() {
+    const { expenses } = useExpenses();
     const total = expenses.reduce(
         (sum, expense) => sum + Number(expense.amount),
         0,

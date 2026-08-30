@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./ExpenseForm.css";
+import { useExpenses } from "../context/ExpenseContent";
 
-export function ExpenseForm({ onAddExpense }) {
+export function ExpenseForm() {
+    const { onAddExpense } = useExpenses();
     const [formData, setFormData] = useState({
         amount: "",
         category: "",
@@ -53,7 +55,7 @@ export function ExpenseForm({ onAddExpense }) {
                         name="note"
                     />
                 </div>
-                <button type="submit" className="Button">
+                <button type="submit" className="save-btn">
                     Save
                 </button>
             </form>

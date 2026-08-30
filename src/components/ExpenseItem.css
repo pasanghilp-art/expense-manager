@@ -6,3 +6,7 @@
     background: var(--card);
     border-radius: 14px;
 }
+
+.delete-btn {
+    background: none;
+}
