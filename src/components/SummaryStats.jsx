@@ -9,7 +9,7 @@ export function SummaryStats() {
 
     return (
         <div className="summary-stats">
-            <span>Total: {total}</span>
+            <span className="summary-total">Total: {total}</span>
 
             <div className="category-breakdown">
                 {Object.entries(categoryTotals).map(([category, total]) => (

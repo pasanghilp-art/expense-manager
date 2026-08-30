@@ -9,11 +9,17 @@ import { CategoryPieChart } from "./components/CategoryPieChart";
 function App() {
     return (
         <ExpenseProvider>
-            <ExpenseForm />
-            <ExpenseList />
-            <SummaryStats />
-            <CategoryPieChart />
-            <CategoryBarChart />
+            <div className="app-container">
+                <div className="left-column">
+                    <ExpenseForm />
+                    <ExpenseList />
+                </div>
+                <div className="right-column">
+                    <SummaryStats />
+                    <CategoryPieChart />
+                    <CategoryBarChart />
+                </div>
+            </div>
         </ExpenseProvider>
     );
 }

@@ -8,16 +8,22 @@ export function ExpenseItem({ expense, expenses, setExpenses }) {
 
     return (
         <div className="expense-item">
-            <span className=".expense-item">{expense.amount}</span>
-            <span className=".expense-item">{expense.category}</span>
-            <span className=".expense-item">{expense.date}</span>
-            <span className=".expense-item">{expense.note}</span>
-            <button
-                className="delete-btn"
-                onClick={() => DeleteBtn(expense.id)}
-            >
-                Delete
-            </button>
+            <div className="expense-item-details">
+                <span className="expense-item-amount">{expense.amount}</span>
+                <span className="expense-item-date">{expense.date}</span>
+                <span className="expense-item-note">{expense.note}</span>
+            </div>
+            <div className="expense-item-actions">
+                <span className="expense-item-category">
+                    {expense.category}
+                </span>
+                <button
+                    className="delete-btn"
+                    onClick={() => DeleteBtn(expense.id)}
+                >
+                    Delete
+                </button>
+            </div>
         </div>
     );
 }

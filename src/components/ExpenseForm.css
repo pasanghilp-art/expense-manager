@@ -1,26 +1,53 @@
-form {
+.expense-form {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
     display: flex;
-    gap: 12px;
-    align-items: flex-end;
     flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-end;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
+    flex: 1;
+    min-width: 120px;
 }
 
-input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+.form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.form-group input {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #6366f1;
 }
 
 .save-btn {
-    color: black;
-    background: white;
-    border: 1px solid black;
-    border-radius: 6px;
-    padding: 6px 12px;
+    padding: 10px 20px;
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    height: fit-content;
+}
+
+.save-btn:hover {
+    background: #4f46e5;
 }
