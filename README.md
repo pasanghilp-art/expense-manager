@@ -1,16 +1,30 @@
-# React + Vite
+# Expense Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project manages expenses — it produces a list of expenses the user adds through a form, and summarizes the total along with a breakdown by category.
 
-Currently, two official plugins are available:
+The category breakdown is shown visually with a pie chart and bar diagram to show the diversity of expenses.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Live Demo:** https://expense-manager-sofd.onrender.com
 
-## React Compiler
+![App Screenshot](./assets/image.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+React (JSX), JavaScript, Recharts, Vite, ESLint
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Key Feature
+
+This project uses the Context API instead of prop drilling, along with methods like `.reduce()` on objects and arrays to calculate totals.
+
+## What I Learned
+
+I learned how to use the Context API for managing shared state — useful for larger projects where passing the same props through many components becomes repetitive and hard to maintain.
+
+## Running Locally
+
+```bash
+git clone https://github.com/pasanghilp-art/expense-manager.git
+cd expense-manager
+npm install
+npm run dev
+```
